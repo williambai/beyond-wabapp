@@ -3,7 +3,7 @@
         <div class="scrollable-content section">
             <div class="alert alert-warning">您有{{messages}}条申请要审核</div>
             <div ng-repeat="item in items">
-                <div class="panel panel-{{item.color}}" ng-click="audit()" style="cursor:pointer;">
+                <div class="panel panel-{{item.color}}" ng-click="audit()" style="cursor:pointer;" id="item-{{item.id}}">
 
                     <div class="panel-heading">
                         <div class="pull-right">{{item.status}}</div>
@@ -11,7 +11,7 @@
                     </div>
                     <div class="panel-body">
                         <p>请假时间：{{item.startTime}}到{{item.endTime}}</p>
-                        <div>
+                        <div ng-show="true">
                             详细信息
                             <div>
                                 <p>{{item.reason}}

@@ -11,8 +11,11 @@ var config = {
   
   vendor: {
     js: [
+      './bower_components/jquery/dist/jquery.js',
+      './bower_components/jquery-ui/ui/jquery-ui.js',
       './bower_components/angular/angular.js',
       './bower_components/angular-route/angular-route.js',
+      './bower_components/angular-ui-date/src/date.js',
       './bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js'
     ],
 

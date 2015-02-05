@@ -1,9 +1,10 @@
-angular.module('BeyondApp.controllers.Attendance',[])
+angular.module('BeyondApp.controllers.Attendance',['ui.date'])
 
 .controller('ApplyController',['$scope','$http','$location',function($scope,$http,$location){
 	$scope.days = 9;
 	$scope.submit = function(){
 		$http.get('/').success(function(data){
+			alert('sumbit ok!');
 			$location.path('manage');
 		});
 	};
@@ -13,6 +14,7 @@ angular.module('BeyondApp.controllers.Attendance',[])
 	$scope.items = 
 	[
 		{
+			id: 1,
 			type: '未处理请假',
 			status: '待审批',
 			startTime: '2015-01-12',
@@ -21,6 +23,7 @@ angular.module('BeyondApp.controllers.Attendance',[])
 			color: 'primary',
 		},
 		{
+			id: 2,
 			type: '已审批请假',
 			status: '已审批',
 			startTime: '2015-01-12',
@@ -29,6 +32,7 @@ angular.module('BeyondApp.controllers.Attendance',[])
 			color: 'default',
 		},
 		{
+			id:3,
 			type: '已审批请假',
 			status: '已审批',
 			startTime: '2015-01-14',
@@ -39,7 +43,7 @@ angular.module('BeyondApp.controllers.Attendance',[])
 	];
 
 	$scope.audit = function(){
-		alert('ok');
+		alert('ok!');
 	}
 
 }]);
