@@ -1,45 +1,28 @@
+<div class="app-content" ng-controller="ManageController">
+    <div class="scrollable">
+        <div class="scrollable-content section">
+            <div class="alert alert-warning">您有{{messages}}条申请要审核</div>
+            <div ng-repeat="item in items">
+                <div class="panel panel-{{item.color}}" ng-click="audit()" style="cursor:pointer;">
 
-            <div class="app-content">
-                <div class="scrollable">
-                    <div class="scrollable-content section">
-                        <div class="alert alert-warning">您有x条申请要审核</div>
-                        <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="pull-right">{{item.status}}</div>
+                        <h4>{{item.type}}</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>请假时间：{{item.startTime}}到{{item.endTime}}</p>
+                        <div>
+                            详细信息
+                            <div>
+                                <p>{{item.reason}}
+                                </p>
 
-                            <div class="panel-heading">
-                                <div class="pull-right">待审批</div>
-                                <h4> 未处理请假</h4>
-                            </div>
-                            <div class="panel-body">
-                                <p>请假时间：2015-01-12到2015-01-21</p>
-                                <div>
-                                    详细信息
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled specimen book.
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <span class="pull-right">已审批</span>
-                                <h4> 已审批请假</h4>
-                            </div>
-                            <div class="panel-body">
-                                <p>请假时间：2015-01-12到2015-01-21</p>
-                                <div>
-                                    详细信息
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled specimen book.
-                                        </p>
-
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+        </div>
+    </div>
+</div>

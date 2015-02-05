@@ -1,7 +1,9 @@
 angular.module('BeyondApp', [
   'ngRoute',
   'mobile-angular-ui',
-  'BeyondApp.controllers.Main'
+  'BeyondApp.controllers.Main',
+  'BeyondApp.controllers.Attendance',
+  'BeyondApp.controllers.SideBarRight'
 ])
 
 .config(['$routeProvider','$locationProvider',function($routeProvider,$location) {
