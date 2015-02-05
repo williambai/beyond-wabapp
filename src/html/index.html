@@ -8,6 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
     <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <link rel="stylesheet" href="css/hover.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
     <link rel="stylesheet" href="css/responsive.min.css" />
     <!-- inject:js -->
@@ -19,8 +20,12 @@
     <div ng-include="'sidebar.html'" 
             ui-track-as-search-param='true'
             class="sidebar sidebar-left"></div>
+    <div ng-include="'sidebarRight.html'" 
+            class="sidebar sidebar-right"></div>
 
-    <div class="app">
+    <div class="app"
+         ui-swipe-right='Ui.turnOn("uiSidebarLeft")'
+         ui-swipe-left='Ui.turnOff("uiSidebarLeft")'>
 
       <!-- Navbars -->
 

@@ -4,9 +4,9 @@ angular.module('BeyondApp', [
   'BeyondApp.controllers.Main'
 ])
 
-.config(function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'apply.html'});
-  $routeProvider.when('/apply', {templateUrl: 'apply.html'});
-  $routeProvider.when('/manage', {templateUrl: 'manage.html'});
-  $routeProvider.when('/record', {templateUrl: 'record.html'});
-});
+.config(['$routeProvider','$locationProvider',function($routeProvider,$location) {
+  $routeProvider.when('/', {templateUrl: 'apply.html', reloadOnSearch: false});
+  $routeProvider.when('/apply', {templateUrl: 'apply.html', reloadOnSearch: false});
+  $routeProvider.when('/manage', {templateUrl: 'manage.html', reloadOnSearch: false});
+  $routeProvider.when('/record', {templateUrl: 'record.html', reloadOnSearch: false});
+}]);
