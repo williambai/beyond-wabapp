@@ -21,7 +21,15 @@ var config = {
 
     fonts: [
       './bower_components/font-awesome/fonts/fontawesome-webfont.*'
-    ]
+    ],
+    plugin: {
+      css: [
+      './bower_components/jquery-ui/themes/smoothness/jquery-ui.css'
+      ],
+      images: [
+        './bower_components/jquery-ui/themes/smoothness/images/*'
+      ]
+    } 
   },
 
   server: {
@@ -156,6 +164,23 @@ gulp.task('fonts', function() {
   .pipe(gulp.dest(path.join(config.dest, 'fonts')));
 });
 
+/*==================================
+=            Copy plugin CSS       =
+==================================*/
+
+gulp.task('plugin-css', function(){
+  return gulp.src(config.vendor.plugin.css)
+  .pipe(gulp.dest(path.join(config.dest,'css')));
+})
+
+/*==================================
+=            Copy plugin images    =
+==================================*/
+
+gulp.task('plugin-image', function(){
+  return gulp.src(config.vendor.plugin.images)
+  .pipe(gulp.dest(path.join(config.dest,'css','images')));
+})
 
 /*=================================================
 =            Copy html files to dest              =
@@ -256,7 +281,7 @@ gulp.task('weinre', function() {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['html', 'fonts', 'images', 'less', 'js'];
+  var tasks = ['html', 'fonts', 'images', 'less', 'js','plugin-css','plugin-image'];
   seq('clean', tasks, done);
 });
 
